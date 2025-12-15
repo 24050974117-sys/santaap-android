@@ -1,30 +1,30 @@
 package com.example.foodapp.Domain;
 
 public class Price {
-    private int Id;
-    private String Value;
+    private int id;
+    private String price;
 
     public Price() {
     }
 
-    @Override
-    public String toString() {
-        return  Value ;
-    }
-
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getValue() {
-        return Value;
+    public String getPrice() {
+        return price;
     }
 
-    public void setValue(String value) {
-        Value = value;
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return price; // Ini penting agar rentang harga tampil di spinner
     }
 }

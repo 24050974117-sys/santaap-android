@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "573229394140",
-    "project_id": "foodapp-a410f",
-    "storage_bucket": "foodapp-a410f.appspot.com"
+    "project_number": "535299940578",
+    "firebase_url": "https://daffafood-4430b-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "daffafood-4430b",
+    "storage_bucket": "daffafood-4430b.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:573229394140:android:037ae2369a380c8dbbec19",
+        "mobilesdk_app_id": "1:535299940578:android:32649488306117cc5a7ebb",
         "android_client_info": {
           "package_name": "com.example.foodapp"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCyUIEdGf1NUTQ9Czi2evpq1LJwKtvwOkQ"
+          "current_key": "AIzaSyABwei8zb6UumYCyJ8TdUIbj-7yIN6Wb3E"
         }
       ],
       "services": {

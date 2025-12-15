@@ -9,14 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout; // Pastikan ini di-import
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.foodapp.Activity.ListFoodsActivity2;
 import com.example.foodapp.Domain.Category;
-import com.example.foodapp.Domain.Foods;
 import com.example.foodapp.R;
 
 import java.util.ArrayList;
@@ -31,64 +29,36 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
 
     @NonNull
     @Override
-    public CategoryAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        context=parent.getContext();
-        View inflate= LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_category,parent,false);
+    public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context = parent.getContext();
+        View inflate = LayoutInflater.from(context).inflate(R.layout.viewholder_category, parent, false);
         return new viewholder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryAdapter.viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull viewholder holder, int position) {
+        Category currentCategory = items.get(position);
+        holder.titleTxt.setText(currentCategory.getTitle());
 
-        holder.titleTxt.setText(items.get(position).getName());
+        // --- PENYESUAIAN: Blok 'switch' dihapus ---
 
-        switch (position){
-            case 0:{
-                holder.pic.setBackgroundResource(R.drawable.cat_1_background);
-                break;
-            }
-            case 1:{
-                holder.pic.setBackgroundResource(R.drawable.cat_0_background);
-                break;
-            }
-            case 2:{
-                holder.pic.setBackgroundResource(R.drawable.cat_2_background);
-                break;
-            }
-            case 3:{
-                holder.pic.setBackgroundResource(R.drawable.cat_3_background);
-                break;
-            }
-            case 4:{
-                holder.pic.setBackgroundResource(R.drawable.cat_4_background);
-                break;
-            }
-            case 5:{
-                holder.pic.setBackgroundResource(R.drawable.cat_5_background);
-                break;
-            }
-            case 6:{
-                holder.pic.setBackgroundResource(R.drawable.cat_6_background);
-                break;
-            }
-            case 7:{
-                holder.pic.setBackgroundResource(R.drawable.cat_7_background);
-                break;
-            }
-        }
+        // Ganti dengan satu baris ini untuk membuat semua warna sama.
+        // Ganti 'cat_0_background' dengan drawable lain jika Anda ingin warna yang berbeda.
+        holder.background.setBackgroundResource(R.drawable.cat_0_background);
 
-        int drawableResourceId=context.getResources().getIdentifier(items.get(position).getImagePath(),
-                "drawable",holder.itemView.getContext().getPackageName());
+        // Mencari ID resource ikon di folder "drawable"
+        int drawableResourceId = context.getResources().getIdentifier(currentCategory.getPic(),
+                "drawable", context.getPackageName());
 
-
-//        Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
         Glide.with(context)
                 .load(drawableResourceId)
                 .into(holder.pic);
+
+        // Menambahkan aksi klik
         holder.itemView.setOnClickListener(v -> {
-            Intent intent=new Intent(context, ListFoodsActivity2.class);
-            intent.putExtra("categoryId",items.get(position).getId());
-            intent.putExtra("categoryName",items.get(position).getName());
+            Intent intent = new Intent(context, ListFoodsActivity2.class);
+            intent.putExtra("categoryId", currentCategory.getId());
+            intent.putExtra("categoryName", currentCategory.getTitle());
             context.startActivity(intent);
         });
     }
@@ -101,10 +71,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewho
     public class viewholder extends RecyclerView.ViewHolder {
         TextView titleTxt;
         ImageView pic;
+        ConstraintLayout background; // Referensi ke background ikon
+
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            titleTxt=itemView.findViewById(R.id.catNameTxt);
-            pic=itemView.findViewById(R.id.imgCat);
+            titleTxt = itemView.findViewById(R.id.catNameTxt);
+            pic = itemView.findViewById(R.id.imgCat);
+            background = itemView.findViewById(R.id.background_cat); // ID dari viewholder_category.xml
         }
     }
 }
+

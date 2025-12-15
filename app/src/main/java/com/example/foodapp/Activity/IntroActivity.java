@@ -16,20 +16,19 @@ public class IntroActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityIntroBinding.inflate(getLayoutInflater());
+        binding = ActivityIntroBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setVariable();
         getWindow().setStatusBarColor(Color.parseColor("#FFE485"));
     }
 
     private void setVariable() {
+        // --- PENYESUAIAN KODE ---
+        // Tombol login sekarang akan selalu membuka LoginActivity
         binding.loginBtn.setOnClickListener(v -> {
-            if (mAuth.getCurrentUser()!=null){
-                startActivity(new Intent(IntroActivity.this, MainActivity.class));
-            }else {
-                startActivity(new Intent(IntroActivity.this, LoginActivity.class));
-            }
+            startActivity(new Intent(IntroActivity.this, LoginActivity.class));
         });
+        // ------------------------
 
         binding.signupBtn.setOnClickListener(v -> startActivity(new Intent(IntroActivity.this, SignupActivity.class)));
     }

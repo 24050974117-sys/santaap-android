@@ -1,101 +1,121 @@
+# 🍽️ Santaap – Aplikasi Pemesanan Makanan Berbasis Android
 
+## 📌 Deskripsi Project
 
-```markdown
-# Food Ordering Mobile Application 📱🍴
+**Santaap** adalah aplikasi pemesanan makanan berbasis **Android** yang dikembangkan sebagai **Project Akhir Mata Kuliah Pemrograman Mobile** di Universitas Negeri Surabaya. Aplikasi ini bertujuan untuk menggantikan sistem pemesanan makanan konvensional (chat/telepon) menjadi sistem digital yang lebih **efisien, aman, dan real-time**.
 
-This repository contains the source code and documentation for a native Android application designed for seamless food ordering. Built using **Java** and **Firebase** with Android Studio, this app delivers a smooth and user-friendly interface to browse restaurant dishes, manage a cart, and enhance the food ordering experience.
-
----
-
-## Features 🌟
-- **User Authentication**: Secure login and signup with Firebase Authentication.
-- **Browse Dishes**: Explore menu items categorized for easy navigation.
-- **Search & Filters**: Search bar with sorting options by location, delivery time, and price.
-- **Cart Management**: Add, remove, and manage food items in the cart with dynamic pricing updates.
-- **Loading Screen**: Smooth transitions with a pre-loading interface.
-- **Scalability**: Designed to support future features like payment gateway integration.
-
----
----
-
-## Technologies Used 🛠️
-- **Android Studio**: Development environment.
-- **Java**: Programming language for the application.
-- **Firebase**: Backend for authentication, database, and image hosting.
-- **Glide**: Media retrieval and image loading framework.
+Aplikasi Santaap memungkinkan pengguna untuk melihat menu makanan, menambahkan ke keranjang, melakukan checkout, serta membayar secara online melalui **Midtrans Payment Gateway**. Seluruh data pengguna, menu, dan pesanan dikelola menggunakan **Firebase**.
 
 ---
 
-## Architecture 🏗️
-- **MVC Pattern**:
-  - **Model**: Classes in the `Domain` folder.
-  - **View**: Activities in the `Activity` folder and adapters in the `Adapter` folder.
-  - **Controller**: Business logic within the activities and helper classes in the `Helper` folder.
+## 🎯 Tujuan Pengembangan
+
+* Menyediakan solusi pemesanan makanan digital berbasis Android
+* Mengintegrasikan sistem pembayaran online yang aman (Midtrans)
+* Mempermudah pengelolaan data menu dan pesanan menggunakan Firebase
+* Memberikan pengalaman pengguna yang praktis dan user-friendly
 
 ---
 
-## Challenges Faced 🚧
-- **Image Retrieval**: Slow loading from Firebase database. Resolved by optimizing image sizes, though some retrieval issues persist.
-- **Limited Time**: Focused on creating a strong foundation for future scalability.
+## 🛠️ Teknologi yang Digunakan
+
+* **Platform**: Android
+* **IDE**: Android Studio
+* **Bahasa Pemrograman**: Kotlin / Java
+* **Frontend**: XML
+* **Backend & Database**: Firebase (Authentication & Realtime Database)
+* **Payment Gateway**: Midtrans (Sandbox)
+* **Build System**: Gradle
+* **Minimum Android Version**: Android 8.0 (API 26)
 
 ---
 
-## How to Use 🛠️
+## ✨ Fitur Utama
 
-### Prerequisites:
-1. **Install Java JDK**: Version 8 or later.
-2. **Install Android Studio**: Latest stable version.
-3. **Set up Firebase**: Configure Firebase Authentication and Realtime Database.
+### 👤 Konsumen
 
-### Steps to Run:
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/yourusername/food-ordering-app.git
-   ```
-2. **Open the project**:
-   - Open Android Studio and select `Open an existing project`.
-   - Navigate to the cloned repository and open it.
+* Registrasi & Login pengguna
+* Melihat daftar menu makanan
+* Pencarian dan filter makanan
+* Menambahkan makanan ke keranjang (Cart)
+* Mengelola keranjang (tambah, hapus, ubah jumlah)
+* Checkout dan pembayaran online via Midtrans
+* Melihat riwayat pesanan
+* Menandai makanan favorit
+* Manajemen profil pengguna
 
-3. **Configure Firebase**:
-   - Add the `google-services.json` file from Firebase to the `app/` directory.
+### 🛠️ Admin / Penjual
 
-4. **Build and Run**:
-   - Sync Gradle by clicking `Sync Now` in Android Studio.
-   - Run the app on an emulator or physical device.
+* Login admin
+* Menambahkan, mengubah, dan menghapus menu makanan (CRUD)
+* Monitoring pesanan secara real-time
+* Integrasi pembayaran Midtrans (mode sandbox)
 
 ---
 
-## How to Use the Application 🚀
+## 📂 Struktur Project (Sederhana)
 
-1. **Welcome Screen**:
-   - New users: Click **Sign Up** to create an account.
-   - Returning users: Click **Log In** to access your account.
-
-2. **Home Page**:
-   - Use the search bar to find food items.
-   - Browse categories and explore featured items under "Today's Best Foods."
-
-3. **Cart**:
-   - Add food items to the cart and manage quantities.
-   - View the total bill and apply coupons.
-
----
-
-## References 📚
-- [Android Studio Developers Guide](https://developer.android.com/guide/)
-
-
-
----
-
-## Future Enhancements 🚀
-- Integration of payment gateways for secure transactions.
-- Improved image handling and caching mechanisms.
-- Enhanced sorting and filtering options.
-
----
-
-Feel free to explore, use, and contribute to this project! Happy coding! 🎉
+```text
+app/
+ ├── manifests/
+ ├── java/
+ │    └── com.example.santaap/
+ ├── res/
+ │    ├── layout/
+ │    ├── drawable/
+ │    └── values/
+ ├── google-services.json
+ └── build.gradle
 ```
 
-You can replace the placeholder paths (e.g., `path/to/home_screen.png`) with the actual paths to your images in the repository. Let me know if you'd like help customizing any sections!
+---
+
+## ▶️ Cara Menjalankan Project
+
+1. Clone repository ini:
+
+   ```bash
+   git clone https://github.com/username/santaap.git
+   ```
+2. Buka project menggunakan **Android Studio**
+3. Pastikan file `google-services.json` sudah terkonfigurasi
+4. Lakukan **Gradle Sync**
+5. Jalankan aplikasi pada emulator atau perangkat Android
+
+---
+
+## 🧪 Pengujian
+
+Metode pengujian yang digunakan adalah **Black Box Testing**, dengan hasil seluruh fitur utama berjalan dengan baik, seperti:
+
+* Login & registrasi
+* Manajemen keranjang
+* Pencarian dan filter menu
+* Integrasi Midtrans
+* Navigasi antar halaman
+
+---
+
+## 📸 Screenshot Aplikasi
+
+> *(Tambahkan screenshot aplikasi di folder `screenshots/` dan tampilkan di sini)*
+
+---
+
+## 👨‍🎓 Tim Pengembang
+
+Project ini dikembangkan oleh:
+
+* **Rahmat Ferdiyansyah** (24050974100)
+* **Ahmad Alwi Tio Wicaksono** (24050974098)
+* **Muhammad Hestiavin Daffa** (24050974117) – Ketua Kelompok
+
+Program Studi **Pendidikan Teknologi Informasi**
+Fakultas Teknik, Universitas Negeri Surabaya
+Tahun 2025
+
+---
+
+## 📄 Lisensi
+
+Project ini dibuat untuk **keperluan akademik dan pembelajaran**. Bebas digunakan sebagai referensi dengan mencantumkan sumber.

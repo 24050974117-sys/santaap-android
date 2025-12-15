@@ -1,30 +1,30 @@
 package com.example.foodapp.Domain;
 
 public class Time {
-    private int Id;
-    private String Value;
+    private int id;
+    private String time;
 
     public Time() {
     }
 
-    @Override
-    public String toString() {
-        return  Value ;
-    }
-
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
-    public String getValue() {
-        return Value;
+    public String getTime() {
+        return time;
     }
 
-    public void setValue(String value) {
-        Value = value;
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return time; // Ini penting agar teks waktu tampil di spinner
     }
 }

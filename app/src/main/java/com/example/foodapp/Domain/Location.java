@@ -1,30 +1,30 @@
 package com.example.foodapp.Domain;
 
 public class Location {
-    private int Id;
-    private String Loc;
+    private int id;
+    private String loc;
 
     public Location() {
     }
 
-    @Override
-    public String toString() {
-        return Loc ;
-    }
-
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getLoc() {
-        return Loc;
+        return loc;
     }
 
     public void setLoc(String loc) {
-        Loc = loc;
+        this.loc = loc;
+    }
+
+    @Override
+    public String toString() {
+        return loc; // Ini penting agar nama lokasi tampil di spinner
     }
 }

@@ -1,122 +1,95 @@
 package com.example.foodapp.Domain;
 
-public class Foods {
-    private int CategoryId;
-    private String Description;
-    private boolean BestFood;
-    private int Id;
-    private int LocationId;
-    private double Price;
-    private String ImagePath;
-    private int PriceId;
-    private double Star;
-    private int TimeId;
-    private int TimeValue;
-    private String Title;
-    private  int numberInCart;
+import java.io.Serializable;
 
+// Serializable memungkinkan objek ini untuk dikirim antar Activity (misal ke halaman detail atau keranjang)
+public class Foods implements Serializable {
+    // Variabel utama untuk data makanan
+    private int categoryId;
+    private String description;
+    private boolean bestFood;
+    private String imagePath;
+    private double price;
+    private double star;
+    private int timeValue;
+    private String title;
+
+    // Variabel untuk fitur keranjang belanja
+    private int numberInCart;
+
+    // Variabel untuk fitur filter
+    private int locationId;
+    private int timeId;
+    private int priceId;
+
+    // Constructor kosong ini wajib ada untuk Firebase
     public Foods() {
     }
 
-    @Override
-    public String toString() {
-        return Title;
-    }
+    // --- Getters and Setters untuk semua variabel ---
 
     public int getCategoryId() {
-        return CategoryId;
+        return categoryId;
     }
 
     public void setCategoryId(int categoryId) {
-        CategoryId = categoryId;
+        this.categoryId = categoryId;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public boolean isBestFood() {
-        return BestFood;
+        return bestFood;
     }
 
     public void setBestFood(boolean bestFood) {
-        BestFood = bestFood;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public int getLocationId() {
-        return LocationId;
-    }
-
-    public void setLocationId(int locationId) {
-        LocationId = locationId;
-    }
-
-    public double getPrice() {
-        return Price;
-    }
-
-    public void setPrice(double price) {
-        Price = price;
+        this.bestFood = bestFood;
     }
 
     public String getImagePath() {
-        return ImagePath;
+        return imagePath;
     }
 
     public void setImagePath(String imagePath) {
-        ImagePath = imagePath;
+        this.imagePath = imagePath;
     }
 
-    public int getPriceId() {
-        return PriceId;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPriceId(int priceId) {
-        PriceId = priceId;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public double getStar() {
-        return Star;
+        return star;
     }
 
     public void setStar(double star) {
-        Star = star;
-    }
-
-    public int getTimeId() {
-        return TimeId;
-    }
-
-    public void setTimeId(int timeId) {
-        TimeId = timeId;
+        this.star = star;
     }
 
     public int getTimeValue() {
-        return TimeValue;
+        return timeValue;
     }
 
     public void setTimeValue(int timeValue) {
-        TimeValue = timeValue;
+        this.timeValue = timeValue;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public int getNumberInCart() {
@@ -126,4 +99,29 @@ public class Foods {
     public void setNumberInCart(int numberInCart) {
         this.numberInCart = numberInCart;
     }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public int getTimeId() {
+        return timeId;
+    }
+
+    public void setTimeId(int timeId) {
+        this.timeId = timeId;
+    }
+
+    public int getPriceId() {
+        return priceId;
+    }
+
+    public void setPriceId(int priceId) {
+        this.priceId = priceId;
+    }
 }
+

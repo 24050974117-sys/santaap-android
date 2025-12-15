@@ -10,9 +10,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
 rootProject.name = "FoodApp"
-include(":app")
- 
+include(":app")  // <-- INI YANG BENAR UNTUK FILE .gradle

@@ -2,11 +2,14 @@ package com.example.foodapp.Domain;
 
 public class Category {
     private int id;
-    private String ImagePath;
-    private String Name;
+    private String pic;
+    private String title;
 
+    // Constructor kosong ini wajib ada untuk Firebase
     public Category() {
     }
+
+    // --- Getters and Setters ---
 
     public int getId() {
         return id;
@@ -16,19 +19,19 @@ public class Category {
         this.id = id;
     }
 
-    public String getImagePath() {
-        return ImagePath;
+    public String getPic() {
+        return pic;
     }
 
-    public void setImagePath(String imagePath) {
-        ImagePath = imagePath;
+    public void setPic(String pic) {
+        this.pic = pic;
     }
 
-    public String getName() {
-        return Name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }
