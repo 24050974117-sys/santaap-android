@@ -131,29 +131,53 @@ app/
 
 Berikut adalah tampilan aplikasi Santap:
 
-![Halaman Sign](screenshots/SIGN.png)
-*Halaman SIGN*
+<table style="width:100%">
+  <tr>
+    <td align="center" width="25%">
+      <img src="screenshots/SIGN.png" alt="Sign In" width="100%"/>
+      <br>
+      <sub><b>Halaman Sign</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="screenshots/HOME.png" alt="Home" width="100%"/>
+      <br>
+      <sub><b>Halaman Utama</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="screenshots/Frame9.png" alt="Detail" width="100%"/>
+      <br>
+      <sub><b>Halaman Detail</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="screenshots/Frame21.png" alt="Card" width="100%"/>
+      <br>
+      <sub><b>Halaman Cart</b></sub>
+    </td>
+  </tr>
 
-![Halaman Utama](screenshots/HOME.png)
-*Halaman Utama*
-
-![Halaman DetailFood](screenshots/Frame9.png)
-*Halaman Detail*
-
-![Halaman Card](screenshots/Frame21.png)
-*Halaman Card*
-
-![Halaman Favorite](screenshots/FAVORITE.png)
-*Halaman Favorite*
-
-![Halaman History](screenshots/HISTORY.png)
-*Halaman History*
-
-![Halaman Profile](screenshots/PROFILE.png)
-*Halaman Profile*
-
-![Halaman About](screenshots/ABOUT.png)
-*Halaman About*
+  <tr>
+    <td align="center" width="25%">
+      <img src="screenshots/FAVORITE.png" alt="Favorite" width="100%"/>
+      <br>
+      <sub><b>Halaman Favorite</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="screenshots/HISTORY.png" alt="History" width="100%"/>
+      <br>
+      <sub><b>Halaman History</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="screenshots/PROFILE.png" alt="Profile" width="100%"/>
+      <br>
+      <sub><b>Halaman Profile</b></sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="screenshots/ABOUT.png" alt="About" width="100%"/>
+      <br>
+      <sub><b>Halaman About</b></sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
